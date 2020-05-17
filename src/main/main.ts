@@ -1,11 +1,12 @@
 // Modules to control application life and create native browser window
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, globalShortcut } from 'electron';
 import Browser from './browser';
 
 class Migu {
   browser: any;
   init() {
     this.initApp();
+    this.bindShortCut();
   }
 
   initApp() {
@@ -38,6 +39,12 @@ class Migu {
   }
   createBrowser() {
     this.browser = new Browser();
+  }
+  bindShortCut() {
+    const operateHelper = {};
+    globalShortcut.register('CommandOrControl+Shift+Alt+Space', () => {
+
+    });
   }
 }
 

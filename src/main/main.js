@@ -9,6 +9,7 @@ const browser_1 = __importDefault(require("./browser"));
 class Migu {
     init() {
         this.initApp();
+        this.bindShortCut();
     }
     initApp() {
         // This method will be called when Electron has finished
@@ -38,6 +39,11 @@ class Migu {
     }
     createBrowser() {
         this.browser = new browser_1.default();
+    }
+    bindShortCut() {
+        const operateHelper = {};
+        electron_1.globalShortcut.register('CommandOrControl+Shift+Alt+Space', () => {
+        });
     }
 }
 new Migu().init();
